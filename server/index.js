@@ -7,7 +7,7 @@ var _ = require('underscore'),
 module.exports = function (app, options, callback) {
 
     var swaggerTools = require("swagger-tools"),
-        client = require("./lib/services");
+        services = require("./lib/services");
 
     // swaggerRouter configuration
     _.defaults(options, {
@@ -16,9 +16,9 @@ module.exports = function (app, options, callback) {
     });
 
     // The Swagger document (require it, build it programmatically, fetch it from a URL, ...)
-    var swaggerDoc = require('./api/tools.json');
+    var swaggerDoc = require('../api/tools.json');
 
-    client.merchantToolsClient = options.merchantToolsClient;
+    services.merchantToolsClient = options.merchantToolsClient;
 
     // Initialize the Swagger middleware
     swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {

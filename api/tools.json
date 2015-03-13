@@ -16,9 +16,9 @@
         "application/json"
     ],
     "host": "paypal.com",
-    "basePath": "/api/tools",
+    "basePath": "/api/v1",
     "paths": {
-        "/": {
+        "/tools": {
             "get": {
                 "x-swagger-router-controller": "tools",
                 "operationId": "getTools",
@@ -51,7 +51,7 @@
                 }
             }
         },
-        "/content": {
+        "/tools/content": {
             "get": {
                 "x-swagger-router-controller": "content",
                 "operationId": "getContentForTools",
