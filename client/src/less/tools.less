@@ -1,0 +1,65 @@
+ @import "variables";
+
+.searchForm { 
+  margin: 0;
+
+  div.textInput{
+    margin: 0;
+
+     label {
+      position: absolute;
+      top: 4px;
+      left: 13px;
+      font-size: @baseFontSize - 1px;
+      color: #9DA3A6;
+    }
+
+    input.searchSite {
+      width: 200px;
+      height: 35px;
+      margin: -1px 0 0;
+      padding: 4px 10px;
+      float: left;
+      line-height: 35px;
+      border-radius: 5px 0 0 5px;
+      font-size: @baseFontSize + 1px;  //0.823em;
+      box-shadow: 0 1px rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.15) inset;
+      background: #FFFFFF;
+
+      &:focus {
+        /* outer glow - barely visible */
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15) inset, 0 0 5px 0 rgba(58, 144, 194, 0.6) !important;
+        outline: none;
+      }
+    }
+
+    .searchSubmit {
+      height: 35px;
+      width: 72px;
+      margin: -1px 0 0;
+      cursor: pointer;
+      padding: 0 6px;
+      border: 1px solid #cfcfcf;
+      border-left:0 none;
+      border-radius: 0 5px 5px 0;
+      line-height: 35px;
+      color: #2c2e2f;
+      background: #e1e7eb;
+      box-shadow: 0 1px @white inset;
+      float: right;
+
+      &:hover {
+          background: #edf2f5;
+          color: #181a1c;
+      }
+
+      &:active {
+             background: #c5ccd1;
+             color: #2c2e2f;
+      }
+      &::-moz-focus-inner { /* fix for Firefox */
+        border: 0;
+      }
+    }
+  }
+}
