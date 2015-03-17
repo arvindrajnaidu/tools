@@ -1,0 +1,116 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Tools",
+        "description": "#### Tools available.\n"
+    },
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "host": "paypal.com",
+    "basePath": "/api/v1",
+    "paths": {
+        "/tools": {
+            "get": {
+                "x-swagger-router-controller": "tools",
+                "operationId": "getTools",
+                "tags": ["/"],
+                "description": "Get the tools available for the merchant",
+                "parameters": [
+                    {
+                        "name": "favorite",
+                        "in": "query",
+                        "description": "Retrieve favorites",
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get the tools available",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Tool"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "error payload",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorModel"
+                        }
+                    }                    
+                }
+            }
+        },
+        "/tools/content": {
+            "get": {
+                "x-swagger-router-controller": "content",
+                "operationId": "getContentForTools",
+                "tags": ["/"],
+                "description": "Get the content for tools",
+                "responses": {
+                    "200": {
+                        "description": "Get the tools available",
+                        "schema": {
+                            "type": "array",
+                            "items" : {
+                                
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "error payload",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorModel"
+                        }
+                    }                    
+                }
+            }
+        }    
+    },
+    "definitions" : {
+        "Tool": {
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "favorite": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "ErrorModel": {
+            "required": [
+                "code",
+                "message"
+            ],
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
