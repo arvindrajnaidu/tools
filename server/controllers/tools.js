@@ -16,10 +16,10 @@ module.exports.getTools = function (req, res, next) {
             var getToolsUrl = util.format('v1/customer/merchants/%s/tools', req.securityContext.actor.account_number),
                 params = {
                     method: 'GET',
-                    patxwwwh: getToolsUrl,
+                    path: getToolsUrl,
                     qs: {
                         countryCode: req.locality.country
-                    },
+                    }
                 };
 
             log.debug("Calling Merchant Tools service with params", params);
