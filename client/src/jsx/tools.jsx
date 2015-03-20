@@ -1,7 +1,8 @@
 /** @jsx React.DOM */
 
 var React = require('react'),
-    Localize = require('./localize.jsx').Localize;
+    Content = require('./content.jsx').Content;
+
 
 var Tools = React.createClass({
 
@@ -28,17 +29,30 @@ var Tools = React.createClass({
     this.loadToolsInformation();
 	},
 
+  i18n : function (key) {
+      if(typeof key === "string") {
+        key = this.props.dictionary[key];  
+      }
+      return key.value;
+  },
+
 	render: function () {
 
     var toolNodes = this.state.data.tools.map(function(tool) {
       return (
-        <li><a href={tool.url}>{tool.details.name}</a></li>
+        <li>
+          <a href={tool.url}>
+            {this.i18n(tool.name)}
+          </a>
+        </li>
       );
-    });
+    }.bind(this));
 
 		return (
       <li className="mer-more-menu">
-        <a href="#" className="moreLink">{this.props.dictionary.label}</a>
+        <a href="#" className="moreLink">
+          {this.i18n("label")}
+        </a>
         <ul>
           {toolNodes}
         </ul>
