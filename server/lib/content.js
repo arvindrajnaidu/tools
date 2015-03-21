@@ -4,7 +4,7 @@ var bundalo = require('bundalo'),
     log = require('../lib/logger').logger;
 
 var config = {
-    "contentPath": __dirname + "/../locales/",
+    "contentPath": __dirname + "/../../locales/",
     "fallback": "en-US",
     "engine": "none"
 };
