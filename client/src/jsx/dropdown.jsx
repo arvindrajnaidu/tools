@@ -62,7 +62,7 @@ var ToolsDropdown = React.createClass({
 
 });
 
-module.exports.ToolsDropdown = function (elementId, options) {
+exports.ToolsDropdown = function (elementId, options) {
   
   var serviceUrl = "/" + options.basePath + "/api/tools";
 

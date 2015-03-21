@@ -99,7 +99,7 @@ var ToolsDashboard = React.createClass({
 	}
 });
 
-module.exports.ToolsDashboard = function (elementId, options) {
+exports.ToolsDashboard = function (elementId, options) {
   
   var serviceUrl = "/" + options.basePath + "/api/v1/tools";
 
