@@ -4,7 +4,7 @@ var React = require('react'),
     Content = require('./content.jsx').Content;
 
 
-var Tools = React.createClass({
+var ToolsDropdown = React.createClass({
 
   loadToolsInformation: function() {
     $.ajax({
@@ -62,7 +62,7 @@ var Tools = React.createClass({
 
 });
 
-module.exports = function (elementId, options) {
+module.exports.ToolsDropdown = function (elementId, options) {
   
   var serviceUrl = "/" + options.basePath + "/api/tools";
 
@@ -71,7 +71,7 @@ module.exports = function (elementId, options) {
       dataType: 'json',
       success: function(data) {
         React.render(
-          <Tools url= {options.basePath? serviceUrl : ""} dictionary={data?data:{}}/>,
+          <ToolsDropdown url= {options.basePath? serviceUrl : ""} dictionary={data?data:{}}/>,
           document.getElementById(elementId)
         )
       }.bind(this),

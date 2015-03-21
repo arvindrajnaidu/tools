@@ -11,18 +11,19 @@ var less = require('gulp-less');
 // they're done.
 
 gulp.task('clean', function(done) {
-    del(['dist'], done);
+    del(['dist', 'public'], done);
 });
 
 // Our CSS task. It finds all our Stylus files and compiles them.
 
 gulp.task('css', ['clean'], function () {
-    gulp.src('./src/less/tools.less')
+    gulp.src('./src/less/*.less')
     .pipe(less())
-    .pipe(gulp.dest('./dist'))
-    .pipe(gulp.dest('../../../public/js/components/tools'));
-});
+    .pipe(gulp.dest('./public/css/components/tools'))
 
+    gulp.src('./src/img/*')
+        .pipe(gulp.dest('./public/img'));
+});
 
 // Our JS task. It will Browserify our code and compile React JSX files.
 gulp.task('js', function() {
@@ -31,11 +32,11 @@ gulp.task('js', function() {
         standalone: 'Tools',
         transform : ['reactify'],
         extensions: ['.jsx'],
-        entries: './src/jsx/tools.jsx'
+        entries: ['./src/jsx/dropdown.jsx', './src/jsx/dashboard.jsx']
     })
     .bundle()
     .pipe(source('tools.js'))
-    .pipe(gulp.dest('./dist/'));
+    .pipe(gulp.dest('./public/js/components/tools'));
     // .pipe(gulp.dest('../../../public/js/components/tools'));
 });
 

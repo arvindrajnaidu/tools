@@ -49,9 +49,7 @@
                         }
                     }                    
                 }
-            }
-        },
-        "/updateTools": {
+            },
             "post": {
                 "x-swagger-router-controller": "tools",
                 "operationId": "updateTools",
@@ -68,7 +66,7 @@
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/ToolForUpdate"
+                                "$ref": "#/definitions/FavoriteTool"
                             }
                         }
                     }
@@ -142,7 +140,7 @@
                 }
             }
         },
-        "ToolForUpdate": {
+        "FavoriteTool": {
             "required": [
                 "id",
                 "key",
