@@ -40,7 +40,7 @@ function _allToolsRequestHandler (callback) {
 function _getAllTools (accountNumber, countryCode) {
 
     var services  = require('../lib/services');
-    var client = services.merchantToolsClient;
+    var client = ServiceCore.create('merchanttoolserv');
 
     return function (callback) {
 
@@ -61,7 +61,7 @@ function _getAllTools (accountNumber, countryCode) {
 function _getFavTools (accountNumber, countryCode) {
 
     var services  = require('../lib/services');
-    var client = services.merchantToolsClient;
+    var client = ServiceCore.create('merchanttoolserv');
 
     return function (callback) {
 
@@ -143,7 +143,7 @@ function updateTools (req, res, next) {
 
     log.info("updateTools", req.params);
     var services  = require('../lib/services');
-    var client = services.merchantToolsClient;
+    var client = ServiceCore.create('merchanttoolserv');
 
     var urlStr = util.format('v1/customer/merchants/%s/favoritetools', req.securityContext.actor.account_number),
         payload = [];

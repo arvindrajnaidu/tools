@@ -10,7 +10,7 @@ module.exports = function (app, options, callback) {
 
     var swaggerTools = require("swagger-tools");
     
-    services.merchantToolsClient = ServiceCore.create('merchanttoolserv');
+    //services.merchantToolsClient = ServiceCore.create('merchanttoolserv');
 
     // swaggerRouter configuration
     _.defaults(options, {
