@@ -32,7 +32,7 @@ gulp.task('js', function() {
         standalone: 'Tools',
         transform : ['reactify'],
         extensions: ['.jsx'],
-        entries: ['./src/jsx/dropdown.jsx', './src/jsx/dashboard.jsx']
+        entries: ['./src/jsx/tools.jsx']
     })
     .bundle()
     .pipe(source('tools.js'))
