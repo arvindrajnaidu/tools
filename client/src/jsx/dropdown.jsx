@@ -64,7 +64,11 @@ var ToolsDropdown = React.createClass({
 
 module.exports = function (elementId, options) {
   
-  var serviceUrl = "/" + options.basePath + "/api/tools";
+  var serviceUrl = "/api/v1/tools";
+
+  if (options.basePath) {
+      serviceUrl = "/" + options.basePath + serviceUrl;
+  }
 
   $.ajax({
       url: serviceUrl + "/content?bundle=dropdown",
