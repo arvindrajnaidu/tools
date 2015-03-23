@@ -19,10 +19,10 @@ gulp.task('clean', function(done) {
 gulp.task('css', ['clean'], function () {
     gulp.src('./src/less/*.less')
     .pipe(less())
-    .pipe(gulp.dest('./public/css/components/tools'))
+    .pipe(gulp.dest('./dist/css'))
 
     gulp.src('./src/img/*')
-        .pipe(gulp.dest('./public/img'));
+        .pipe(gulp.dest('./dist/img'));
 });
 
 // Our JS task. It will Browserify our code and compile React JSX files.
@@ -36,11 +36,11 @@ gulp.task('js', function() {
     })
     .bundle()
     .pipe(source('tools.js'))
-    .pipe(gulp.dest('./public/js/components/tools'));
+    .pipe(gulp.dest('./dist/js'));
     // .pipe(gulp.dest('../../../public/js/components/tools'));
 });
 
-// Rerun tasks whenever a file changes.
+// Rerun tasks whenever a file changes
 gulp.task('watch', function() {
     gulp.watch(['src/**/*'], ['js']);
 });
