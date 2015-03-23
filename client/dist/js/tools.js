@@ -142,7 +142,11 @@ var ToolsDashboard = React.createClass({displayName: "ToolsDashboard",
 
 module.exports = function (elementId, options) {
   
-  var serviceUrl = "/" + options.basePath + "/api/v1/tools";
+  var serviceUrl = "/api/v1/tools";
+
+  if (options.basePath) {
+      serviceUrl = "/" + options.basePath + serviceUrl;
+  }
 
   $.ajax({
       url: serviceUrl + "/content?bundle=tools",
@@ -230,7 +234,11 @@ var ToolsDropdown = React.createClass({displayName: "ToolsDropdown",
 
 module.exports = function (elementId, options) {
   
-  var serviceUrl = "/" + options.basePath + "/api/tools";
+  var serviceUrl = "/api/v1/tools";
+
+  if (options.basePath) {
+      serviceUrl = "/" + options.basePath + serviceUrl;
+  }
 
   $.ajax({
       url: serviceUrl + "/content?bundle=dropdown",
