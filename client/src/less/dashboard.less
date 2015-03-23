@@ -1,0 +1,142 @@
+#tools {
+  margin-top: 3%;
+
+  .tools-set {
+    margin: 0;
+    margin-left: 25px;
+    position: relative;
+    left:0;
+
+    .tool {
+      float: left;
+      height: 337px;
+      overflow: auto;
+      line-height: 12px;
+      list-style-type: none;
+      padding: 0px;
+      width: 23%;
+      text-align: center;
+      background-color: #fff;
+      margin: 10px;
+      box-shadow: 0 1px 2px 0 rgba(102, 113, 128, 0.2);
+      border-radius: 5px;
+      position: relative;
+      text-decoration: none;
+
+      .toolStatus {
+        height: 25%;
+        width: 100%;
+        border-top: 1px solid #0e9ef3;
+      }
+
+      .toolImage {
+        background: transparent url(/businessexp/img/ic_pphere.svg) no-repeat 0 0;
+        background-position: center center;
+        padding: 25px;
+        background-color: #fff;
+        margin: -10% auto 0px;
+        border: 1px solid white;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.11);
+        width: 27%;
+      }
+
+      ul {
+        margin-top: 1%;
+        padding: 0px;
+
+        li {
+          padding: 5px;
+        }
+      }
+
+      &:hover {
+        background-color: #fafdff;
+        box-shadow: 0 5px 10px 0 rgba(102, 113, 128, 0.08)
+      }
+
+      &:active {
+        background-color: #fff;
+        box-shadow: 0 1px 2px 0 rgba(102, 113, 128, 0.2);
+      }
+
+      &.inactive {
+        background-color: #f3f6f8;
+        box-shadow: 0 1px 2px 0 #e0e5e8 inset;
+
+        .toolStatus {
+          border-top: none;
+        }
+
+        .toolAction {
+          .flow {
+            float: none;
+          }
+
+          .fav {
+           display: none;
+          }
+        }
+
+        &:hover {
+          background-color: #fff;
+          box-shadow: 0 5px 10px 0 rgba(102, 113, 128, 0.08);
+        }
+
+        &:active {
+          background-color: #fafdff;
+          box-shadow: 0 1px 2px 0 rgba(102, 113, 128, 0.2);
+
+          .toolStatus {
+            border-top: 1px solid #0e9ef3;
+          }
+        }
+      }
+
+      .toolAction {
+        padding: 0px 10px;
+        bottom: 0px;
+        display: block;
+        vertical-align: bottom;
+        width: 100%;
+        position: absolute;
+
+        .toolOptions {
+          padding: 10px;
+          overflow: auto;
+          border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .flow {
+          float: left;
+        }
+
+        .fav {
+          float: right;
+          width: 17%;
+          height: 32px;
+          background: url(https://dl.dropboxusercontent.com/u/7364646/love-sprite%402x.png) no-repeat;
+          background-position: 0 0;
+          background-size: 480px;
+
+          &.faved {
+            background-position: -440px 0;
+            transition: background 0.5s steps(11);
+          }
+        }
+
+        .fav:hover {
+          cursor: pointer;
+        }
+
+        a {
+          font-weight: bold;
+          line-height: 33px;
+          outline: 0;
+          padding: 0px 0px 0px;
+          word-wrap: break-word;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

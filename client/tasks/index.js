@@ -25,12 +25,12 @@ module.exports = function (grunt) {
                 standalone: 'Tools',
                 transform: ['reactify'],
                 extensions: ['.jsx'],
-                entries: './src/jsx/tools.jsx'
+                entries: ['./src/jsx/dropdown.jsx', './src/jsx/dashboard.jsx']
             })
                 .bundle()
                 .pipe(source('tools.js'))
                 // .pipe(buffer())
-                // .pipe(uglify())                
+                // .pipe(uglify())
                 .pipe(gulp.dest(destDir));
 
         });

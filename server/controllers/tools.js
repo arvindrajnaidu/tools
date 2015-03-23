@@ -108,10 +108,10 @@ function _consolidateTheTools (req, res, next) {
 
         result.allTools = _.map(toolsByKey, function (tool) {
 
-            if (tool.active) {
-                tool.category = 2; // Active
-            } else if (tool.favorite) {
+            if (tool.favorite) {
                 tool.category = 1; // Favorite
+            } else if (tool.active) {
+                tool.category = 2; // Active
             } else {
                 tool.category = 3; // Inactive
             }
@@ -119,9 +119,7 @@ function _consolidateTheTools (req, res, next) {
 
         });
 
-        req.model.data.tools = _.sortBy(result.allTools, function (tool) {
-            return tool.category;
-        });
+        req.model.data.tools = _.sortBy(result.allTools, "category");
 
         next();
     };
