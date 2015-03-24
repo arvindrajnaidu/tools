@@ -1,7 +1,8 @@
 /** @jsx React.DOM */
 
 var React = require('react'),
-    cx = require('classnames');
+    cx = require('classnames'),
+    _ = require('underscore');
 
 var ToolsDashboard = React.createClass({
 
@@ -31,24 +32,34 @@ var ToolsDashboard = React.createClass({
     updateFavorites: function(tool, event) {
         event && event.preventDefault();
 
-        var _csrf = $("[name='_csrf']").val();
-            toolData = {
+        //Temporary fix until service removees order as part of tools patch api
+        var maxOrderTool = _.max(this.state.data.tools, function(tool) {
+            return tool.order;
+        });
+
+        var _csrf = $("[name='_csrf']").val(),
+            toolData = [{
             "id": tool.id,
             "key": tool.key,
             "favorite": !($(event.target).hasClass('faved')),
-            "order": 6,
-            "_csrf": _csrf
-        };
+            "order": maxOrderTool.order + 1
+        }];
 
         //Change the state for the user and update the favorites in background
         $(event.target).toggleClass('faved');
 
         $.ajax({
             url: this.props.url,
-            type: "POST",
-            data: toolData
+            type: "post",
+            headers: {
+                "x-csrf-token": _csrf
+            },
+            contentType: "application/json",
+            dataType: "json",
+            processData: false,
+            data: JSON.stringify(toolData)
         }).done(function (data) {
-            if (data.data.success) {
+            if (data.success) {
             }
         }).fail(function () {
             //$(e.target).toggleClass('faved');
@@ -113,7 +124,7 @@ module.exports = function (elementId, options) {
       success: function(data) {
           $(document).ready(function() {
               React.render(
-                  <ToolsDashboard url={options.basePath ? serviceUrl : ""} dictionary={data ? data : {}}/>,
+                  <ToolsDashboard url={serviceUrl ? serviceUrl : ""} dictionary={data ? data : {}}/>,
                   document.getElementById(elementId)
               );
           });

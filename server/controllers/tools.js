@@ -28,7 +28,8 @@ function _allToolsRequestHandler (callback) {
                 key: tool.name,
                 name: util.format("content:%s.name", tool.name),
                 description: util.format("content:%s.description", tool.name),
-                active: active
+                active: active,
+                order: tool.order || 0
             });
         });
 
@@ -99,11 +100,10 @@ function _consolidateTheTools (req, res, next) {
 
         //Set favorite tools
         _.each(result.favoriteTools, function eachFavTool(tool) {
-
             if (toolsByKey[tool.name]) {
                 toolsByKey[tool.name].favorite = true;
+                toolsByKey[tool.name].order = tool.order;
             }
-
         });
 
         result.allTools = _.map(toolsByKey, function (tool) {
@@ -146,13 +146,15 @@ function updateTools (req, res, next) {
     var urlStr = util.format('v1/customer/merchants/%s/favoritetools', req.securityContext.actor.account_number),
         payload = [];
 
-    _.map(req.body.tools, function each(tool) {
-        var eachTool = _.clone(tool);
-        if(tool.favorite) {
-            eachTool.favorite = 'A';
-        } else {
-            eachTool.favorite = 'I';
-        }
+    _.map(req.body, function each(tool) {
+        //Map to an object that the service understands
+        var eachTool = {
+            "id": tool.id,
+            "name": tool.key,
+            "status": (tool.favorite) ? 'A' : 'I',
+            "order": tool.order
+        };
+
         payload.push(eachTool);
     });
 
@@ -162,7 +164,7 @@ function updateTools (req, res, next) {
         qs: {
             countryCode: req.locality.country
         },
-        body: payload
+        body: JSON.stringify(payload)
     };
 
     log.debug("Calling Merchant Tools service with params", params);

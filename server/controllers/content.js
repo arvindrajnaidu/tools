@@ -27,9 +27,7 @@ module.exports.getContentForTools = function (req, res, next) {
 
     log.info("getContentForTools", req.params);
 
-    var locale = req.locality.language + '_' + req.locality.country;
-
-    contentLookup.getDictionaryForLocality(locale, function (err, dictionary) {
+    contentLookup.getDictionaryForLocality(req.locality.culture, function (err, dictionary) {
         if (err) {
             log.error("Error occured while getting dictionary from props", {
                 err: err,
