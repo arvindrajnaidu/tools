@@ -31,7 +31,7 @@ var ToolsDropdown = React.createClass({
 
   i18n : function (key) {
       if(typeof key === "string") {
-        key = this.props.dictionary[key];  
+        key = this.props.dictionary[key];
       }
       return key.value;
   },
@@ -41,7 +41,7 @@ var ToolsDropdown = React.createClass({
     var toolNodes = this.state.data.tools.map(function(tool) {
       return (
         <li>
-          <a href={tool.url}>
+          <a name={tool.name} href={tool.url}>
             {this.i18n(tool.name)}
           </a>
         </li>
@@ -50,20 +50,20 @@ var ToolsDropdown = React.createClass({
 
 		return (
       <li className="mer-more-menu">
-        <a href="#" className="moreLink">
+        <a name="label" href="#" className="moreLink">
           {this.i18n("label")}
         </a>
         <ul>
           {toolNodes}
         </ul>
-      </li>    
+      </li>
 		);
 	}
 
 });
 
 module.exports = function (elementId, options) {
-  
+
   var serviceUrl = "/api/v1/tools";
 
   if (options.basePath) {
@@ -82,5 +82,5 @@ module.exports = function (elementId, options) {
       error: function(xhr, status, err) {
         console.error(status, err.toString());
       }.bind(this)
-    });    
+    });
 };

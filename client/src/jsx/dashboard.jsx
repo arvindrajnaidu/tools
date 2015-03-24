@@ -81,7 +81,7 @@ var ToolsDashboard = React.createClass({
                         <div className="toolAction">
                             <div className="toolOptions">
                                 <span className="flow">
-                                    <a href={tool.link} >{toolStatusLabel}</a>
+                                    <a name={toolStatusLabel} href={tool.link} >{toolStatusLabel}</a>
                                 </span>
                                 <span className={cx("fav", favoriteClass)} onClick={this.updateFavorites.bind(this, tool)}/>
                             </div>
@@ -100,7 +100,7 @@ var ToolsDashboard = React.createClass({
 });
 
 module.exports = function (elementId, options) {
-  
+
   var serviceUrl = "/api/v1/tools";
 
   if (options.basePath) {
