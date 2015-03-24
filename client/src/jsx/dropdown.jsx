@@ -75,7 +75,7 @@ module.exports = function (elementId, options) {
       dataType: 'json',
       success: function(data) {
         React.render(
-          <ToolsDropdown url= {options.basePath? serviceUrl : ""} dictionary={data?data:{}}/>,
+          <ToolsDropdown url= {serviceUrl ? serviceUrl : ""} dictionary={data?data:{}}/>,
           document.getElementById(elementId)
         )
       }.bind(this),

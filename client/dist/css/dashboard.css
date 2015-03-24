@@ -29,7 +29,7 @@
   border-top: 1px solid #0e9ef3;
 }
 #tools .tools-set .tool .toolImage {
-  background: transparent url(/businessexp/img/ic_pphere.svg) no-repeat 0 0;
+  background: transparent url(../img/ic_pphere.svg) no-repeat 0 0;
   background-position: center center;
   padding: 25px;
   background-color: #fff;
@@ -39,7 +39,7 @@
   width: 27%;
 }
 #tools .tools-set .tool ul {
-  margin-top: 1%;
+  margin-top: 8%;
   padding: 0px;
 }
 #tools .tools-set .tool ul li {
@@ -48,6 +48,9 @@
 #tools .tools-set .tool:hover {
   background-color: #fafdff;
   box-shadow: 0 5px 10px 0 rgba(102, 113, 128, 0.08);
+}
+#tools .tools-set .tool rect {
+  fill: #0e9ef3;
 }
 #tools .tools-set .tool:active {
   background-color: #fff;

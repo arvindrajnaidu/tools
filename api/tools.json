@@ -137,6 +137,10 @@
                 },
                 "favorite": {
                     "type": "boolean"
+                },
+                "order": {
+                    "type": "integer",
+                    "format": "int32"
                 }
             }
         },
@@ -149,8 +153,7 @@
             ],
             "properties": {
                 "id": {
-                    "type": "integer",
-                    "format": "int32"
+                    "type": "string"
                 },
                 "key": {
                     "type": "string"
