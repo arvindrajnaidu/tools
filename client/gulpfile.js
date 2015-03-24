@@ -37,7 +37,20 @@ gulp.task('js', function() {
     .bundle()
     .pipe(source('tools.js'))
     .pipe(gulp.dest('./dist/js'));
-    // .pipe(gulp.dest('../../../public/js/components/tools'));
+});
+
+// 
+gulp.task('pisces', function() {
+
+    browserify({
+        standalone: 'Tools',
+        transform : ['reactify'],
+        extensions: ['.jsx'],
+        entries: ['./src/jsx/tools.pisces.jsx']
+    })
+    .bundle()
+    .pipe(source('tools.pisces.js'))
+    .pipe(gulp.dest('./dist/js'));
 });
 
 // Rerun tasks whenever a file changes

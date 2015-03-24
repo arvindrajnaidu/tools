@@ -1,11 +1,12 @@
 /** @jsx React.DOM */
 
 var React = require('react'),
-    Content = require('./content.jsx').Content;
+    ContentMixin = require('../mixins/content');
 
 
 var ToolsDropdown = React.createClass({
 
+  mixins: [ContentMixin],
   loadToolsInformation: function() {
     $.ajax({
       url: this.props.url,
@@ -28,13 +29,6 @@ var ToolsDropdown = React.createClass({
     /* This will be an ajax call to our tools endpoint */
     this.loadToolsInformation();
 	},
-
-  i18n : function (key) {
-      if(typeof key === "string") {
-        key = this.props.dictionary[key];
-      }
-      return key.value;
-  },
 
 	render: function () {
 

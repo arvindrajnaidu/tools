@@ -49,9 +49,6 @@
   background-color: #fafdff;
   box-shadow: 0 5px 10px 0 rgba(102, 113, 128, 0.08);
 }
-#tools .tools-set .tool rect {
-  fill: #0e9ef3;
-}
 #tools .tools-set .tool:active {
   background-color: #fff;
   box-shadow: 0 1px 2px 0 rgba(102, 113, 128, 0.2);

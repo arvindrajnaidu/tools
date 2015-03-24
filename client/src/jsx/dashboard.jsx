@@ -3,25 +3,28 @@
 var React = require('react'),
     cx = require('classnames'),
     _ = require('underscore');
+    ContentMixin = require('../mixins/content');
 
 var ToolsDashboard = React.createClass({
 
-    fetchTools: function() {
-        $.ajax({
-          url: this.props.url,
-          dataType: 'json',
-          success: function(data) {
-            this.setState({data: data});
-          }.bind(this),
-          error: function(xhr, status, err) {
-            console.error(this.props.url, status, err.toString());
-          }.bind(this)
-        });
-    },
+  mixins: [ContentMixin],
 
-    getInitialState: function() {
-        return {data: {tools : []}};
-    },
+  fetchTools: function() {
+      $.ajax({
+        url: this.props.url,
+        dataType: 'json',
+        success: function(data) {
+          this.setState({data: data});
+        }.bind(this),
+        error: function(xhr, status, err) {
+          console.error(this.props.url, status, err.toString());
+        }.bind(this)
+      });
+  },
+
+  getInitialState: function() {
+      return {data: {tools : []}};
+  },
 
 
 	componentDidMount: function() {
@@ -65,7 +68,6 @@ var ToolsDashboard = React.createClass({
             //$(e.target).toggleClass('faved');
         });
     },
-
 	render: function () {
         var props = this.props;
         var state = this.state;
