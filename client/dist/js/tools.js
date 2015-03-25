@@ -11,7 +11,7 @@ module.exports = {
 
 var React = require('react'),
     cx = require('classnames'),
-    _ = require('underscore');
+    _ = require('underscore'),
     ContentMixin = require('../mixins/content'),
     $;
 
@@ -216,7 +216,7 @@ var ToolsDropdown = React.createClass({displayName: "ToolsDropdown",
 
 module.exports = function (elementId, options) {
 
-  var serviceUrl = "/api/v1/tools";
+  var serviceUrl = "/api/v1/tools?favorite=true";
 
   if (options.basePath) {
       serviceUrl = "/" + options.basePath + serviceUrl;
@@ -247,9 +247,11 @@ module.exports = function (elementId, options) {
 var ContentMixin = {
   i18n : function (key) {
       if(typeof key === "string") {
-        key = this.props.dictionary[key];  
+        if(this.props.dictionary[key]) {
+          key = this.props.dictionary[key];    
+        }
       }
-      return key.value;
+      return key.value || key;
   }
 };
 
