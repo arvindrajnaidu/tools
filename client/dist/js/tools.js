@@ -166,9 +166,12 @@ var ToolsDropdown = React.createClass({displayName: "ToolsDropdown",
   mixins: [ContentMixin],
   loadToolsInformation: function() {
     $.ajax({
-      url: this.props.url,
+      url: this.props.url + "?favorite=true",
       dataType: 'json',
       success: function(data) {
+        data.tools = data.tools.filter(function (tool) {
+          return tool.favorite;
+        });
         this.setState({data: data});
       }.bind(this),
       error: function(xhr, status, err) {
@@ -192,7 +195,7 @@ var ToolsDropdown = React.createClass({displayName: "ToolsDropdown",
     var toolNodes = this.state.data.tools.map(function(tool) {
       return (
         React.createElement("li", null, 
-          React.createElement("a", {name: tool.name, href: tool.url}, 
+          React.createElement("a", {name: tool.name, href: tool.link}, 
             this.i18n(tool.name)
           )
         )
@@ -215,7 +218,7 @@ var ToolsDropdown = React.createClass({displayName: "ToolsDropdown",
 
 module.exports = function (elementId, options) {
 
-  var serviceUrl = "/api/v1/tools?favorite=true";
+  var serviceUrl = "/api/v1/tools";
 
   if (options.basePath) {
       serviceUrl = "/" + options.basePath + serviceUrl;
