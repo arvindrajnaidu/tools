@@ -10,7 +10,7 @@ require.config( {
     }
 });
 
-require(['jquery', 'sinon', 'tools', 'text!fixtures/dropdown.json', 'text!fixtures/tools.json', 'pisces'], function (sinon, jQuery, Tools, dropdownMock, toolsDataMock) {
+require(['jquery', 'sinon', 'tools', 'text!fixtures/dropdown.json', 'text!fixtures/tools.json', 'pisces'], function (jQuery, sinon, Tools, dropdownMock, toolsDataMock) {
 
     sinon.stub(jQuery, "ajax", function(options) {
         if (options.url.indexOf("/content?bundle=dropdown") > -1) {
