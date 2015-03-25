@@ -18,6 +18,7 @@
     "bundalo": "^0.2.9",
     "cal": "^0.5.23",
     "continuation-local-storage": "^3.1.4",
+    "country-specialization": "^0.2.0",
     "merchanttoolserv": "^1.0.0",
     "moment": "^2.9.0",
     "nconf": "^0.7.1",

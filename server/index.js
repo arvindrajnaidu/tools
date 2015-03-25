@@ -3,6 +3,7 @@
 var _ = require('underscore'),
     log = require('./lib/logger').logger,
     contentMiddleware = require('./middleware/content'),
+    metadataMiddleware = require('./middleware/metadata'),
     ServiceCore = require("servicecore"),
     services = require('./lib/services');
 
@@ -35,6 +36,9 @@ module.exports = function (app, options, callback) {
 
         // Content middleware        
         app.use(swaggerDoc.basePath + "/*", contentMiddleware);
+
+        // Metadata middleware
+        app.use(swaggerDoc.basePath + "/*", metadataMiddleware);
 
         // Serve the Swagger documents and Swagger UI
         app.use(middleware.swaggerUi());
