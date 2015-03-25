@@ -3,7 +3,7 @@ var ContentMixin = {
       if(typeof key === "string") {
         key = this.props.dictionary[key];  
       }
-      return key.value;
+      return key.value || key;
   }
 };
 
