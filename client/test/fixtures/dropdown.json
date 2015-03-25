@@ -3,12 +3,5 @@
     "contentKey": "label",
     "contentBundle": "dropdown",
     "value": "Tools"
-  },
-  "tools": {
-    "description": {
-      "contentKey": "tools.description",
-      "contentBundle": "dropdown",
-      "value": "Hi"
-    }
   }
 }
