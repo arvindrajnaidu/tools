@@ -1,7 +1,8 @@
 /** @jsx React.DOM */
 
 var React = require('react'),
-    ContentMixin = require('../mixins/content');
+    ContentMixin = require('../mixins/content'),
+    $;
 
 
 var ToolsDropdown = React.createClass({
@@ -62,6 +63,10 @@ module.exports = function (elementId, options) {
 
   if (options.basePath) {
       serviceUrl = "/" + options.basePath + serviceUrl;
+  }
+
+  if(options.jQuery) {
+      $ = options.jQuery
   }
 
   $.ajax({
