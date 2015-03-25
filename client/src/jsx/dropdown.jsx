@@ -59,7 +59,7 @@ var ToolsDropdown = React.createClass({
 
 module.exports = function (elementId, options) {
 
-  var serviceUrl = "/api/v1/tools";
+  var serviceUrl = "/api/v1/tools?favorite=true";
 
   if (options.basePath) {
       serviceUrl = "/" + options.basePath + serviceUrl;
