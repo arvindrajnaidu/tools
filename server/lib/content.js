@@ -1,7 +1,7 @@
 "use strict";
 
 var bundalo = require('bundalo'),
-    log = require('../lib/logger').logger;
+    log = require('./logger').logger;
 
 var config = {
     "contentPath": __dirname + "/../../locales/",

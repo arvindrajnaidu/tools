@@ -1,0 +1,140 @@
+{
+    "tools": {
+        "pp_invoicing" : {
+            "signedUp": "/cgi-bin/webscr?cmd=_manage-invoice",
+            "notSignedUp": "/cgi-bin/webscr?cmd=_manage-invoice"
+        },
+
+        "pp_here" : {
+            "signedUp": "/webapps/mpp/credit-card-reader",
+            "notSignedUp": "/webapps/mpp/credit-card-reader"
+        },
+
+        "pp_business_resource_center" : {
+            "signedUp": "https://www.paypal-businesscenter.com/",
+            "notSignedUp": "https://www.paypal-businesscenter.com/"
+        },
+
+        "pp_promote_financing" : {
+            "signedUp": "https://financing.paypal.com/ppfinportal",
+            "notSignedUp": "https://financing.paypal.com/ppfinportal"
+        },
+
+        "pp_dev_site" : {
+            "signedUp": "https://developer.paypal.com/",
+            "notSignedUp": "https://developer.paypal.com/"
+        },
+
+        "pp_business_setup" : {
+            "signedUp": "/webapps/business/activation",
+            "notSignedUp": "/webapps/business/activation"
+        },
+
+        "pp_masspay" : {
+            "signedUp": "/cgi-bin/webscr?cmd=_batch-payment-overview",
+            "notSignedUp": "/cgi-bin/webscr?cmd=_batch-payment-overview"
+        },
+
+        "pp_multi_order_shipping" : {
+            "signedUp": "/cgi-bin/webscr?cmd=_bulk-ship",
+            "notSignedUp": "/cgi-bin/webscr?cmd=_bulk-ship"
+        },
+
+        "pp_shipping_calculator" : {
+            "signedUp": "/cgi-bin/webscr?cmd=_profile-shipping",
+            "notSignedUp": "/cgi-bin/webscr?cmd=_profile-shipping"
+        },
+
+        "pp_request_money" : {
+            "signedUp": "/cgi-bin/webscr?cmd=_request-money",
+            "notSignedUp": "/cgi-bin/webscr?cmd=_request-money"
+        },
+
+        "pp_buttons" : {
+            "signedUp": "/cgi-bin/webscr?cmd=_button-management",
+            "notSignedUp": "/cgi-bin/webscr?cmd=_button-management"
+        },
+
+        "pp_recurring_payments" : {
+            "signedUp": "/cgi-bin/webscr?cmd=_merchant-hub",
+            "notSignedUp": "/cgi-bin/webscr?cmd=_merchant-hub"
+        },
+
+        "pp_api_access" : {
+            "signedUp": "/cgi-bin/webscr?cmd=_profile-api-access",
+            "notSignedUp": "/cgi-bin/webscr?cmd=_profile-api-access"
+        },
+
+        "pp_self_service_demand_gen" : {
+            "signedUp": "/webapps/campaignmanager/content/coming_soon",
+            "notSignedUp": "/webapps/campaignmanager/content/coming_soon"
+        },
+
+        "pp_express_checkout" : {
+            "signedUp": "https://developer.paypal.com/webapps/developer/docs/classic/express-checkout/integration-guide/ECGettingStarted/",
+            "notSignedUp": "https://developer.paypal.com/webapps/developer/docs/classic/express-checkout/integration-guide/ECGettingStarted/"
+        },
+
+        "pp_third_party_shopping_card" : {
+            "signedUp": "/webapps/mpp/standard-integration",
+            "notSignedUp": "/webapps/mpp/standard-integration"
+        },
+
+        "pp_virtual_terminal" : {
+            "signedUp": "https://paypalmanager.paypal.com/vtOrderTransaction.do",
+            "notSignedUp": "https://registration.paypal.com/onboardingPage.do?bundleType=C3&amp;country=US&amp;partner=PayPal",
+            "pending": "/cgi-bin/webscr?cmd=_vt_hub-inside"
+        },
+
+        "pp_tax_calculator" : {
+            "signedUp": "/cgi-bin/webscr?cmd=_profile-sales-tax",
+            "notSignedUp": "/cgi-bin/webscr?cmd=_profile-sales-tax"
+        },
+
+        "pp_manage_fraud_filters" : {
+            "signedUp": "/cgi-bin/webscr?cmd=_rc-performance",
+            "notSignedUp": "/cgi-bin/webscr?cmd=_rc-performance"
+        },
+
+        "pp_manage_billing" : {
+            "signedUp": "https://paypalmanager.paypal.com/invoices.do",
+            "notSignedUp": "https://paypalmanager.paypal.com/invoices.do"
+        },
+
+        "pp_working_capital" : {
+            "signedUp": "/webapps/workingcapital",
+            "notSignedUp": "/webapps/workingcapital"
+        },
+
+        "pp_website_payments_and_hosted_pro" : {
+            "signedUp": "https://paypalmanager.paypal.com/wpp.do",
+            "notSignedUp": "/webapps/mpp/paypal-payments-pro"
+        },
+
+        "pp_send_money" : {
+            "signedUp": "/cgi-bin/webscr?cmd=_send-money",
+            "notSignedUp": "/cgi-bin/webscr?cmd=_send-money"
+        },
+
+        "pp_shopping" : {
+            "signedUp": "https://shopping.paypal.com/index",
+            "notSignedUp": "https://shopping.paypal.com/index"
+        },
+
+        "pp_debitcard" : {
+            "signedUp": "/webapps/mpp/debit-card",
+            "notSignedUp": "/cgi-bin/webscr?cmd=_profile-debit-card",
+            "pending": "/cgi-bin/webscr?cmd=_dc-intro"
+        },
+
+        "pp_quickBook" : {
+            "signedUp": "",
+            "notSignedUp": ""
+        },
+
+        "pp_resolution_center" : {
+            "signedUp": "/cgi-bin/webscr?cmd=_complaint-view",
+            "notSignedUp": "/cgi-bin/webscr?cmd=_complaint-view"
+        }
+    }
+}

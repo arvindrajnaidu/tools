@@ -5,6 +5,7 @@ var contentLookup = require('../lib/content'),
     log = require('../lib/logger').logger,
     shortstop = require('shortstop'),
     traverse = require('traverse'),
+    _ = require('underscore'),
     nconf = require('nconf');
 
 
@@ -58,21 +59,25 @@ function content(req, res, next) {
                 log.error('Error occured in getDictionaryForLocality in the content middleware', err);
 
                 // Send out the reponse without localization - Is this okay?
-                return res.status(200).send(req.model.data);
+                //return res.status(200).send(req.model.data);
+                next();
             }
 
             var resolver = shortstop.create();
 
             resolver.use('content', contentHandler(bundle, dictionary));
-            
             resolver.resolve(req.model.data, function (err, data) {
                 if (err) {
                     log.error('Error occured in resolver.resolve in the content middleware', err);
 
                     // Send out the reponse without localization - Is this okay?
-                    return res.status(200).send(req.model.data);
-                }                
-                res.status(200).send(data);
+                    //return res.status(200).send(req.model.data);
+                    next();
+                }
+
+                _.extend(req.model.data, data);
+                //res.status(200).send(data);
+                next();
             });
         });
         

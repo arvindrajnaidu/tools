@@ -18,16 +18,19 @@ function _allToolsRequestHandler (callback) {
             return callback(err);
         }
         var tools = _.map(result.body.tools, function (tool) {
-            var active = true;
-            if(tool.status === "notSignedUp" || tool.status === "pending") {
+            var active = true,
+                toolStatus = (tool.status) ? tool.status : "signedUp";
+
+            if(toolStatus === "notSignedUp" || tool.status === "pending") {
                 active = false;
             }
 
-            return _.extend({}, tool, {
+            return _.extend({}, {
                 id: tool.id,
                 key: tool.name,
                 name: util.format("content:%s.name", tool.name),
                 description: util.format("content:%s.description", tool.name),
+                link: util.format("metadata:%s.%s", tool.name, toolStatus),
                 active: active,
                 order: tool.order || 0
             });
