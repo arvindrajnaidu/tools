@@ -39,7 +39,7 @@ var ToolsDropdown = React.createClass({
     var toolNodes = this.state.data.tools.map(function(tool) {
       return (
         <li>
-          <a name={tool.name} href={tool.url}>
+          <a name={tool.name} href={tool.link}>
             {this.i18n(tool.name)}
           </a>
         </li>
