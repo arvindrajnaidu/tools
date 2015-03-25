@@ -2,8 +2,9 @@
 
 var React = require('react'),
     cx = require('classnames'),
-    _ = require('underscore');
-    ContentMixin = require('../mixins/content');
+    _ = require('underscore'),
+    ContentMixin = require('../mixins/content'),
+    $;
 
 var ToolsDashboard = React.createClass({
 
@@ -119,6 +120,10 @@ module.exports = function (elementId, options) {
 
   if (options.basePath) {
       serviceUrl = "/" + options.basePath + serviceUrl;
+  }
+
+  if(options.jQuery) {
+      $ = options.jQuery
   }
 
   $.ajax({

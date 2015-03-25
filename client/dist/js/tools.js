@@ -12,7 +12,8 @@ module.exports = {
 var React = require('react'),
     cx = require('classnames'),
     _ = require('underscore');
-    ContentMixin = require('../mixins/content');
+    ContentMixin = require('../mixins/content'),
+    $;
 
 var ToolsDashboard = React.createClass({displayName: "ToolsDashboard",
 
@@ -130,6 +131,10 @@ module.exports = function (elementId, options) {
       serviceUrl = "/" + options.basePath + serviceUrl;
   }
 
+  if(options.jQuery) {
+      $ = options.jQuery
+  }
+
   $.ajax({
       url: serviceUrl + "/content?bundle=tools",
       dataType: 'json',
@@ -153,7 +158,8 @@ module.exports = function (elementId, options) {
 /** @jsx React.DOM */
 
 var React = require('react'),
-    ContentMixin = require('../mixins/content');
+    ContentMixin = require('../mixins/content'),
+    $;
 
 
 var ToolsDropdown = React.createClass({displayName: "ToolsDropdown",
@@ -214,6 +220,10 @@ module.exports = function (elementId, options) {
 
   if (options.basePath) {
       serviceUrl = "/" + options.basePath + serviceUrl;
+  }
+
+  if(options.jQuery) {
+      $ = options.jQuery
   }
 
   $.ajax({
