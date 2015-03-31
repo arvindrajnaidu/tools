@@ -77,8 +77,8 @@ var ToolsDashboard = React.createClass({
         var toolNode = function (tool) {
             var inactiveClass = tool.active ? '' : 'inactive',
                 favoriteClass = tool.favorite ? 'faved' : '',
-                toolStatusLabel = (tool.active ? props.dictionary.tool.activeLabel :
-                    props.dictionary.tool.inactiveLabel);
+                toolStatusLabel = (tool.active ? this.i18n(props.dictionary.tool.activeLabel) :
+                    this.i18n(props.dictionary.tool.inactiveLabel));
 
             return (
                 <div className="row-fluid tools-set">
@@ -87,10 +87,10 @@ var ToolsDashboard = React.createClass({
                         <div className="toolImage"></div>
                         <ul>
                             <li>
-                                <h4>{tool.name}</h4>
+                                <h4>{this.i18n(tool.name)}</h4>
                             </li>
                             <li>
-                                <p>{tool.description}</p>
+                                <p>{this.i18n(tool.description)}</p>
                             </li>
                         </ul>
                         <div className="toolAction">

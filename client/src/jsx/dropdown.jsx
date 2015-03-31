@@ -49,7 +49,7 @@ var ToolsDropdown = React.createClass({
 		return (
       <li className="mer-more-menu">
         <a name="label" href="#" className="moreLink">
-          {this.i18n("label")}
+          {this.i18n(this.props.dictionary["label"])}
         </a>
         <ul>
           {toolNodes}
