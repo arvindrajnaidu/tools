@@ -1,0 +1,28 @@
+{
+    "tools": {
+        "pp_bpi_optimizer" : {
+            "signedUp": "https://www.paypal-optimizer.com/Start?lang=de",
+            "notSignedUp": "https://www.paypal-optimizer.com/Start?lang=de"
+        },
+
+        "pp_bill_safe" : {
+            "signedUp": "/webapps/mpp/billsafe",
+            "notSignedUp": "/webapps/mpp/billsafe"
+        },
+
+        "pp_manual_account_transactions" : {
+            "signedUp": "/webapps/mpp/leitfaden-buchhaltung",
+            "notSignedUp": "/webapps/mpp/leitfaden-buchhaltung"
+        },
+
+        "pp_bpi_optimizer" : {
+            "signedUp": "http://www.paypal-optimizer.com/start?lang=de",
+            "notSignedUp": "http://www.paypal-optimizer.com/start?lang=de"
+        },
+
+        "pp_express_invoice" : {
+            "signedUp": "/webapps/mpp/paypal-express-rechnung",
+            "notSignedUp": "/webapps/mpp/paypal-express-rechnung"
+        }
+    }
+}

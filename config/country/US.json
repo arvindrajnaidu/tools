@@ -1,0 +1,23 @@
+{
+    "tools": {
+        "pp_here" : {
+            "signedUp": "/retailprofile/settings",
+            "notSignedUp": "/retailprofile/settings"
+        },
+
+        "pp_invoicing" : {
+            "signedUp": "/cgi-bin/webscr?cmd=_manage-invoice",
+            "notSignedUp": "/cgi-bin/webscr?cmd=_manage-invoice"
+        },
+
+        "pp_express_checkout" : {
+            "signedUp": "https://developer.paypal.com/webapps/developer/docs/classic/express-checkout/integration-guide/ECGettingStarted/",
+            "notSignedUp": "https://developer.paypal.com/webapps/developer/docs/classic/express-checkout/integration-guide/ECGettingStarted/"
+        },
+
+        "pp_third_party_shopping_card" : {
+            "signedUp": "/webapps/mpp/standard-integration",
+            "notSignedUp": "/webapps/mpp/standard-integration"
+        }
+    }
+}
