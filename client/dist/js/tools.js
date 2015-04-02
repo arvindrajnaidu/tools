@@ -46,17 +46,10 @@ var ToolsDashboard = React.createClass({displayName: "ToolsDashboard",
     updateFavorites: function(tool, event) {
         event && event.preventDefault();
 
-        //Temporary fix until service removees order as part of tools patch api
-        var maxOrderTool = _.max(this.state.data.tools, function(tool) {
-            return tool.order;
-        });
-
-        var _csrf = $("[name='_csrf']").val(),
-            toolData = [{
+        var toolData = [{
             "id": tool.id,
             "key": tool.key,
-            "favorite": !($(event.target).hasClass('faved')),
-            "order": maxOrderTool.order + 1
+            "favorite": !($(event.target).hasClass('faved'))
         }];
 
         //Change the state for the user and update the favorites in background
@@ -66,7 +59,7 @@ var ToolsDashboard = React.createClass({displayName: "ToolsDashboard",
             url: this.props.url,
             type: "post",
             headers: {
-                "x-csrf-token": _csrf
+                "x-csrf-token": this.props.csrf
             },
             contentType: "application/json",
             dataType: "json",
@@ -86,8 +79,8 @@ var ToolsDashboard = React.createClass({displayName: "ToolsDashboard",
         var toolNode = function (tool) {
             var inactiveClass = tool.active ? '' : 'inactive',
                 favoriteClass = tool.favorite ? 'faved' : '',
-                toolStatusLabel = (tool.active ? props.dictionary.tool.activeLabel :
-                    props.dictionary.tool.inactiveLabel);
+                toolStatusLabel = (tool.active ? this.i18n("activeLabel") :
+                    this.i18n("inactiveLabel"));
 
             return (
                 React.createElement("div", {className: "row-fluid tools-set"}, 
@@ -96,10 +89,10 @@ var ToolsDashboard = React.createClass({displayName: "ToolsDashboard",
                         React.createElement("div", {className: "toolImage"}), 
                         React.createElement("ul", null, 
                             React.createElement("li", null, 
-                                React.createElement("h4", null, tool.name)
+                                React.createElement("h4", null, this.i18n(tool.name, true))
                             ), 
                             React.createElement("li", null, 
-                                React.createElement("p", null, tool.description)
+                                React.createElement("p", null, this.i18n(tool.description, true))
                             )
                         ), 
                         React.createElement("div", {className: "toolAction"}, 
@@ -136,12 +129,12 @@ module.exports = function (elementId, options) {
   }
 
   $.ajax({
-      url: serviceUrl + "/content?bundle=tools",
+      url: serviceUrl + "/content?bundle=dashboard",
       dataType: 'json',
       success: function(data) {
           $(document).ready(function() {
               React.render(
-                  React.createElement(ToolsDashboard, {url: serviceUrl ? serviceUrl : "", dictionary: data ? data : {}}),
+                  React.createElement(ToolsDashboard, {url: serviceUrl ? serviceUrl : "", dictionary: data ? data : {}, csrf: options.csrf ? options.csrf : ""}),
                   document.getElementById(elementId)
               );
           });
@@ -170,9 +163,6 @@ var ToolsDropdown = React.createClass({displayName: "ToolsDropdown",
       url: this.props.url + "?favorite=true",
       dataType: 'json',
       success: function(data) {
-        data.tools = data.tools.filter(function (tool) {
-          return tool.favorite;
-        });
         this.setState({data: data});
       }.bind(this),
       error: function(xhr, status, err) {
@@ -197,7 +187,7 @@ var ToolsDropdown = React.createClass({displayName: "ToolsDropdown",
       return (
         React.createElement("li", null, 
           React.createElement("a", {name: tool.name, href: tool.link}, 
-            this.i18n(tool.name)
+            this.i18n(tool.name, true)
           )
         )
       );
@@ -248,14 +238,20 @@ module.exports = function (elementId, options) {
 
 },{"../mixins/content":4,"react":152}],4:[function(require,module,exports){
 var ContentMixin = {
-  i18n : function (key) {
-      if(typeof key === "string") {
-        if(this.props.dictionary[key]) {
-          key = this.props.dictionary[key];    
+    i18n: function (key, noop) {
+
+        if (noop) {
+            return key;
         }
-      }
-      return key.value || key;
-  }
+
+        if (typeof key === "string") {
+            if (this.props.dictionary[key]) {
+                return this.props.dictionary[key];
+            }
+        }
+
+        return key.value || key;
+    }
 };
 
 module.exports = ContentMixin;

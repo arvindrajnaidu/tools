@@ -13,9 +13,6 @@ var ToolsDropdown = React.createClass({
       url: this.props.url + "?favorite=true",
       dataType: 'json',
       success: function(data) {
-        data.tools = data.tools.filter(function (tool) {
-          return tool.favorite;
-        });
         this.setState({data: data});
       }.bind(this),
       error: function(xhr, status, err) {
@@ -40,7 +37,7 @@ var ToolsDropdown = React.createClass({
       return (
         <li>
           <a name={tool.name} href={tool.link}>
-            {this.i18n(tool.name)}
+            {this.i18n(tool.name, true)}
           </a>
         </li>
       );

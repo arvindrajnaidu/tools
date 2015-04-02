@@ -1,8 +1,8 @@
 {
     "tools": {
         "pp_invoicing" : {
-            "signedUp": "/cgi-bin/webscr?cmd=_manage-invoice",
-            "notSignedUp": "/cgi-bin/webscr?cmd=_manage-invoice"
+            "signedUp": "/cgi-bin/webscr?cmd=_create-invoice",
+            "notSignedUp": "/cgi-bin/webscr?cmd=_create-invoice"
         },
 
         "pp_here" : {
@@ -26,8 +26,8 @@
         },
 
         "pp_business_setup" : {
-            "signedUp": "/webapps/business/activation",
-            "notSignedUp": "/webapps/business/activation"
+            "signedUp": "/activation/entryPoint",
+            "notSignedUp": "/activation/entryPoint"
         },
 
         "pp_masspay" : {
@@ -57,12 +57,14 @@
 
         "pp_recurring_payments" : {
             "signedUp": "/cgi-bin/webscr?cmd=_merchant-hub",
-            "notSignedUp": "/cgi-bin/webscr?cmd=_merchant-hub"
+            "notSignedUp": "/cgi-bin/webscr?cmd=_merchant-hub",
+            "pending": "/cgi-bin/webscr?cmd=_merchant-hub"
         },
 
         "pp_api_access" : {
             "signedUp": "/cgi-bin/webscr?cmd=_profile-api-access",
-            "notSignedUp": "/cgi-bin/webscr?cmd=_profile-api-access"
+            "notSignedUp": "/cgi-bin/webscr?cmd=_profile-api-access",
+            "mm": "https://paypalmanager.paypal.com/apiAccess.do?subaction=api"
         },
 
         "pp_self_service_demand_gen" : {
@@ -71,13 +73,13 @@
         },
 
         "pp_express_checkout" : {
-            "signedUp": "https://developer.paypal.com/webapps/developer/docs/classic/express-checkout/integration-guide/ECGettingStarted/",
-            "notSignedUp": "https://developer.paypal.com/webapps/developer/docs/classic/express-checkout/integration-guide/ECGettingStarted/"
+            "signedUp": "https://cms.paypal.com/cgi-bin/marketingweb?cmd=_render-content&content_ID=acct_setup/Setup_Solution_EC_WDG&amp;fli=true",
+            "notSignedUp": "https://cms.paypal.com/cgi-bin/marketingweb?cmd=_render-content&content_ID=acct_setup/Setup_Solution_EC_WDG&amp;fli=true"
         },
 
         "pp_third_party_shopping_card" : {
-            "signedUp": "/webapps/mpp/standard-integration",
-            "notSignedUp": "/webapps/mpp/standard-integration"
+            "signedUp": "/webapps/mpp/shopping-carts",
+            "notSignedUp": "/webapps/mpp/shopping-carts"
         },
 
         "pp_virtual_terminal" : {
@@ -98,7 +100,8 @@
 
         "pp_manage_billing" : {
             "signedUp": "https://paypalmanager.paypal.com/invoices.do",
-            "notSignedUp": "https://paypalmanager.paypal.com/invoices.do"
+            "notSignedUp": "https://paypalmanager.paypal.com/invoices.do",
+            "pending": "https://paypalmanager.paypal.com/invoices.do"
         },
 
         "pp_working_capital" : {
@@ -108,7 +111,8 @@
 
         "pp_website_payments_and_hosted_pro" : {
             "signedUp": "https://paypalmanager.paypal.com/wpp.do",
-            "notSignedUp": "/webapps/mpp/paypal-payments-pro"
+            "notSignedUp": "/webapps/mpp/paypal-payments-pro",
+            "pending": "https://paypalmanager.paypal.com/wpp.do"
         },
 
         "pp_send_money" : {
@@ -123,18 +127,37 @@
 
         "pp_debitcard" : {
             "signedUp": "/webapps/mpp/debit-card",
-            "notSignedUp": "/cgi-bin/webscr?cmd=_profile-debit-card",
-            "pending": "/cgi-bin/webscr?cmd=_dc-intro"
+            "notSignedUp": "/webapps/mpp/debit-card"
         },
 
         "pp_quickBook" : {
-            "signedUp": "",
-            "notSignedUp": ""
+            "signedUp": "https://paypal.dotfeed.com",
+            "notSignedUp": "https://paypal.dotfeed.com"
         },
 
         "pp_resolution_center" : {
             "signedUp": "/cgi-bin/webscr?cmd=_complaint-view",
             "notSignedUp": "/cgi-bin/webscr?cmd=_complaint-view"
+        },
+
+        "pp_bpi_optimizer" : {
+            "signedUp": "https://www.paypal-optimizer.com/start",
+            "notSignedUp": "https://www.paypal-optimizer.com/start"
+        },
+
+        "pp_logo_center" : {
+            "signedUp": "/webapps/mpp/logo-center",
+            "notSignedUp": "/webapps/mpp/logo-center"
+        },
+
+        "pp_currency_calculator" : {
+            "signedUp": "/cgi-bin/webscr?cmd=_profile-currencies",
+            "notSignedUp": "/cgi-bin/webscr?cmd=_profile-currencies"
+        },
+
+        "pp_pos" : {
+            "signedUp": "https://www.paypal.com.au/POS/pos-signup.aspx",
+            "notSignedUp": "https://www.paypal.com.au/POS/pos-signup.aspx"
         }
     }
 }

@@ -1,0 +1,12 @@
+{
+    "activeLabel": {
+        "contentKey": "activeLabel",
+        "contentBundle": "/xyx/locales/US/en/dashboard.properties",
+        "value": "Open"
+    },
+    "inactiveLabel": {
+        "contentKey": "inactiveLabel",
+        "contentBundle": "/xyx/locales/US/en/dashboard.properties",
+        "value": "Learn more"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "tools": {
+        "pp_virtual_terminal" : {
+            "signedUp": "https://paypalmanager.paypal.com/vtOrderTransaction.do",
+            "notSignedUp": "https://www.paypal-apac.com/pro/single-form.asp",
+            "pending": "/cgi-bin/webscr?cmd=_vt_hub-inside"
+        },
+
+        "pp_website_payments_and_hosted_pro" : {
+            "signedUp": "https://www.paypal-apac.com/pro/single-form.asp",
+            "notSignedUp": "https://www.paypal-apac.com/pro/single-form.asp",
+            "pending": "https://www.paypal-apac.com/pro/single-form.asp"
+        }
+    }
+}

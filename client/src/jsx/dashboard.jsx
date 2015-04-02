@@ -37,17 +37,10 @@ var ToolsDashboard = React.createClass({
     updateFavorites: function(tool, event) {
         event && event.preventDefault();
 
-        //Temporary fix until service removees order as part of tools patch api
-        var maxOrderTool = _.max(this.state.data.tools, function(tool) {
-            return tool.order;
-        });
-
-        var _csrf = $("[name='_csrf']").val(),
-            toolData = [{
+        var toolData = [{
             "id": tool.id,
             "key": tool.key,
-            "favorite": !($(event.target).hasClass('faved')),
-            "order": maxOrderTool.order + 1
+            "favorite": !($(event.target).hasClass('faved'))
         }];
 
         //Change the state for the user and update the favorites in background
@@ -57,7 +50,7 @@ var ToolsDashboard = React.createClass({
             url: this.props.url,
             type: "post",
             headers: {
-                "x-csrf-token": _csrf
+                "x-csrf-token": this.props.csrf
             },
             contentType: "application/json",
             dataType: "json",
@@ -77,8 +70,8 @@ var ToolsDashboard = React.createClass({
         var toolNode = function (tool) {
             var inactiveClass = tool.active ? '' : 'inactive',
                 favoriteClass = tool.favorite ? 'faved' : '',
-                toolStatusLabel = (tool.active ? props.dictionary.tool.activeLabel :
-                    props.dictionary.tool.inactiveLabel);
+                toolStatusLabel = (tool.active ? this.i18n("activeLabel") :
+                    this.i18n("inactiveLabel"));
 
             return (
                 <div className="row-fluid tools-set">
@@ -87,10 +80,10 @@ var ToolsDashboard = React.createClass({
                         <div className="toolImage"></div>
                         <ul>
                             <li>
-                                <h4>{tool.name}</h4>
+                                <h4>{this.i18n(tool.name, true)}</h4>
                             </li>
                             <li>
-                                <p>{tool.description}</p>
+                                <p>{this.i18n(tool.description, true)}</p>
                             </li>
                         </ul>
                         <div className="toolAction">
@@ -127,12 +120,12 @@ module.exports = function (elementId, options) {
   }
 
   $.ajax({
-      url: serviceUrl + "/content?bundle=tools",
+      url: serviceUrl + "/content?bundle=dashboard",
       dataType: 'json',
       success: function(data) {
           $(document).ready(function() {
               React.render(
-                  <ToolsDashboard url={serviceUrl ? serviceUrl : ""} dictionary={data ? data : {}}/>,
+                  <ToolsDashboard url={serviceUrl ? serviceUrl : ""} dictionary={data ? data : {}} csrf={options.csrf ? options.csrf : ""}/>,
                   document.getElementById(elementId)
               );
           });

@@ -3,18 +3,29 @@ var React = require('react'),
     $ = require('jquery'),
     sinon = require('sinon'),
     dropdownMock = require('../../test/fixtures/dropdown'),
+    dashboardMock = require('../../test/fixtures/dashboard'),
     toolsDataMock = require('../../test/fixtures/tools');
 
-ContentMixin.i18n = function (key) {
-    if(typeof key === "string") {
-        key = this.props.dictionary[key];
+ContentMixin.i18n = function (key, noop) {
+
+    if(noop) {
+        return (<edit data-key={key.contentKey} data-bundle={key.contentBundle} data-original={key.value}>{key.value}</edit>);
     }
-    return (<edit data-key={key.contentKey} data-bundle={key.contentBundle} data-original={key.value}>{key.value}</edit>)
+
+    if(typeof key === "string") {
+        if (this.props.dictionary[key]) {
+            key = this.props.dictionary[key];
+        }
+    }
+
+    return (<edit data-key={key.contentKey} data-bundle={key.contentBundle} data-original={key.value}>{key.value}</edit>);
 };
 
 sinon.stub($, "ajax", function(options) {
     if (options.url.indexOf("/content?bundle=dropdown") > -1) {
         options.success(dropdownMock);
+    } else if (options.url.indexOf("/content?bundle=dashboard") > -1) {
+        options.success(dashboardMock);
     } else if (options.url.indexOf("/tools") > -1) {
         options.success(toolsDataMock);
     } else {

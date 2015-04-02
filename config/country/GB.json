@@ -1,0 +1,20 @@
+{
+    "tools": {
+        "pp_business_resource_center" : {
+            "signedUp": "/webapps/mpp/grow",
+            "notSignedUp": "/webapps/mpp/grow"
+        },
+
+        "pp_virtual_terminal" : {
+            "signedUp": "https://paypalmanager.paypal.com/vtOrderTransaction.do",
+            "notSignedUp": "https://registration.paypal.com/welcomePage.do?partner=PayPalUK&amp;bundleCode=V3&amp;country=GB",
+            "pending": "https://paypalmanager.paypal.com/vtOrderTransaction.do"
+        },
+
+        "pp_website_payments_and_hosted_pro" : {
+            "signedUp": "https://paypalmanager.paypal.com/editSetting.do?pageName=profile",
+            "notSignedUp": "https://registration.paypal.com/welcomePage.do?partner=PayPalUK&amp;bundleCode=C3&amp;country=GB",
+            "pending": "https://paypalmanager.paypal.com/editSetting.do?pageName=profile"
+        }
+    }
+}
