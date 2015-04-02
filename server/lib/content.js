@@ -13,7 +13,7 @@ var bundle = bundalo(config);
 
 function getDictionaryForLocality (locality, callback) {
     bundle.get({
-        "bundle": ["errors/404", "errors/500", "errors/503", "tools", "dropdown"],
+        "bundle": ["errors/404", "errors/500", "errors/503", "tools", "dropdown", "dashboard"],
         "locality": locality
     }, function bundaloReturn (err, data) {
         if (err || data.error) {

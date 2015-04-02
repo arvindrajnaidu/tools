@@ -1,7 +1,7 @@
 {
-  "label": {
-    "contentKey": "label",
-    "contentBundle": "dropdown",
-    "value": "Tools"
-  }
+    "label": {
+        "contentKey": "label",
+        "contentBundle": "/xyx/locales/US/en/dropdown",
+        "value": "Tools"
+    }
 }
