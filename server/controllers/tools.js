@@ -48,7 +48,7 @@ function _getAllTools (req) {
 
     return function (callback) {
 
-        var getToolsUrl = util.format('v1/customer/merchants/%s/tools', req.securityContext.actor.account_number),
+        var getToolsUrl = 'v1/customer/merchants/tools',
             params = {
                 method: 'GET',
                 path: getToolsUrl,
@@ -114,7 +114,7 @@ function updateTools (req, res, next) {
     var services  = require('../lib/services');
     var client = ServiceCore.create('merchanttoolserv');
 
-    var urlStr = util.format('v1/customer/merchants/%s/favoritetools', req.securityContext.actor.account_number),
+    var urlStr = 'v1/customer/merchants/tools',
         tools = [];
 
     _.map(req.body, function each(tool) {
@@ -129,16 +129,17 @@ function updateTools (req, res, next) {
         tools.push(eachTool);
     });
 
-    var params = {
-        method: 'PATCH',
-        path: urlStr,
-        qs: {
-            countryCode: req.locality.country
+    var payload = {
+            "tools": tools
         },
-        body: {
-            "tools": JSON.stringify(tools)
-        }
-    };
+        params = {
+            method: 'PATCH',
+            path: urlStr,
+            qs: {
+                countryCode: req.locality.country
+            },
+            body: JSON.stringify(payload)
+        };
 
     log.debug("Calling Merchant Tools service with params", params);
     client.request(params, function (err, result) {

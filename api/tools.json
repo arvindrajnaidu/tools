@@ -148,7 +148,6 @@
             "required": [
                 "id",
                 "key",
-                "order",
                 "favorite"
             ],
             "properties": {
@@ -157,10 +156,6 @@
                 },
                 "key": {
                     "type": "string"
-                },
-                "order": {
-                    "type": "integer",
-                    "format": "int32"
                 },
                 "favorite": {
                     "type": "boolean"
