@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="17px" height="19px" viewBox="0 0 17 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-1042.000000, -93.000000)">
+            <g transform="translate(0.000000, 64.000000)">
+                <g transform="translate(1027.000000, 16.000000)">
+                    <g transform="translate(24.000000, 22.000000) scale(-1, 1) translate(-24.000000, -22.000000) translate(12.000000, 11.000000)">
+                        <rect x="0" y="0" width="24" height="22"></rect>
+                        <path d="M12.2191311,15.6253528 C11.7141376,15.7442631 11.1864193,15.8068475 10.6431905,15.8068475 C6.97405145,15.8068475 4,12.9404835 4,9.40377142 C4,5.86705935 6.97405145,3 10.6431905,3 C14.3116081,3 17.2860202,5.86705935 17.2860202,9.40377142 C17.2860202,11.4259418 16.1537525,13.0611322 14.7935162,14.4039146 C14.5096377,14.6841535 14.7462633,14.897288 14.8140767,14.9939461 C14.9096648,15.0902565 20,20 20,20" stroke="#2C2E2F" stroke-linecap="round" stroke-linejoin="round" transform="translate(12.000000, 11.500000) scale(-1, 1) translate(-12.000000, -11.500000) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

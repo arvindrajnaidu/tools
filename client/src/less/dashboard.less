@@ -1,3 +1,5 @@
+@import '../img/svg/css/sprite.css';
+
 #tools {
   margin-top: 3%;
 
@@ -26,18 +28,17 @@
       .toolStatus {
         height: 25%;
         width: 100%;
-        border-top: 1px solid #0e9ef3;
       }
 
       .toolImage {
-        background: transparent url(../img/ic_pphere.svg) no-repeat 0 0;
-        background-position: center center;
-        padding: 25px;
-        background-color: #fff;
+        //background: transparent url(../img/svg/css/svg/sprite.css-bd2897c4.svg) 44.34389140271493% 0 no-repeat;
+        //background-position: center center;
         margin: -10% auto 0px;
+        /*padding: 25px;
+        background-color: #fff;
         border: 1px solid white;
         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.11);
-        width: 27%;
+        width: 27%;*/
       }
 
       ul {
@@ -85,10 +86,6 @@
         &:active {
           background-color: #fafdff;
           box-shadow: 0 1px 2px 0 rgba(102, 113, 128, 0.2);
-
-          .toolStatus {
-            border-top: 1px solid #0e9ef3;
-          }
         }
       }
 
@@ -112,15 +109,15 @@
 
         .fav {
           float: right;
-          width: 17%;
-          height: 32px;
-          background: url(https://dl.dropboxusercontent.com/u/7364646/love-sprite%402x.png) no-repeat;
+          width: 11%;
+          height: 23px;
+          background: url(../img/ic_fav_2x.png) no-repeat;
           background-position: 0 0;
-          background-size: 480px;
+          background-size: 624px;
 
           &.faved {
-            background-position: -440px 0;
-            transition: background 0.5s steps(11);
+            background-position: -576px 0;
+            transition: background 0.8s steps(24);
           }
         }
 

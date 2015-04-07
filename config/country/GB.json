@@ -11,10 +11,16 @@
             "pending": "https://paypalmanager.paypal.com/vtOrderTransaction.do"
         },
 
-        "pp_website_payments_and_hosted_pro" : {
+        "pp_website_payments_pro" : {
             "signedUp": "https://paypalmanager.paypal.com/editSetting.do?pageName=profile",
             "notSignedUp": "https://registration.paypal.com/welcomePage.do?partner=PayPalUK&amp;bundleCode=C3&amp;country=GB",
             "pending": "https://paypalmanager.paypal.com/editSetting.do?pageName=profile"
+        },
+
+        "pp_hosted_sole_solution" : {
+            "signedUp": "/webapps/mpp/pro",
+            "notSignedUp": "/webapps/mpp/pro",
+            "pending": "/webapps/mpp/pro"
         }
     }
 }

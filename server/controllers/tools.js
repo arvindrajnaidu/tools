@@ -122,8 +122,8 @@ function updateTools (req, res, next) {
         var eachTool = {
             "id": tool.id,
             "name": tool.key,
-            "status": (tool.favorite) ? 'A' : 'I',
-            favorite: tool.favorite
+            "popularity": tool.popularity,
+            "favorite": tool.favorite
         };
 
         tools.push(eachTool);

@@ -11,10 +11,16 @@
             "pending": "https://paypalmanager.paypal.com/vtOrderTransaction.do"
         },
 
-        "pp_website_payments_and_hosted_pro" : {
+        "pp_website_payments_pro" : {
             "signedUp": "https://paypalmanager.paypal.com/editSetting.do?pageName=accountSetup",
             "notSignedUp": "/cgi-bin/webscr?cmd=_product-go&amp;product=wp_pro",
             "pending": "https://paypalmanager.paypal.com/editSetting.do?pageName=accountSetup"
+        },
+
+        "pp_hosted_sole_solution" : {
+            "signedUp": "https://paypalmanager.paypal.com/editSetting.do?pageName=profile",
+            "notSignedUp": "/webapps/mpp/hosted",
+            "pending": "/webapps/mpp/hosted"
         },
 
         "pp_bpi_optimizer" : {

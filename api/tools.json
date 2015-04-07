@@ -138,7 +138,7 @@
                 "favorite": {
                     "type": "boolean"
                 },
-                "order": {
+                "popularity": {
                     "type": "integer",
                     "format": "int32"
                 }
@@ -148,7 +148,8 @@
             "required": [
                 "id",
                 "key",
-                "favorite"
+                "favorite",
+                "popularity"
             ],
             "properties": {
                 "id": {
@@ -159,6 +160,10 @@
                 },
                 "favorite": {
                     "type": "boolean"
+                },
+                "popularity": {
+                    "type": "integer",
+                    "format": "int32"
                 }
             }
         },

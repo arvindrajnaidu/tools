@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="40px" height="36px" viewBox="0 0 40 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-846.000000, -973.000000)">
+            <g transform="translate(735.000000, 917.000000)">
+                <g transform="translate(103.000000, 46.000000)">
+                    <g>
+                        <rect x="0" y="0" width="56" height="56"></rect>
+                        <path d="M13.5142857,17.5 L46.3748655,17.5 C46.9962601,17.5 47.5,17.9461086 47.5,18.4929654 L47.5,44.5070346 C47.5,45.0554342 47.0068959,45.5 46.3748655,45.5 L9.62513447,45.5 C9.00373986,45.5 8.5,45.0538914 8.5,44.5070346 L8.5,16.4929654" stroke="#2C2E2F" stroke-linecap="round"></path>
+                        <path d="M8.5,16 L8.5,11.4928642 C8.5,10.9445205 8.95552075,10.5 9.49824564,10.5 L40.5017544,10.5 C41.0530702,10.5 41.5,10.9472694 41.5,11.4928642 L41.5,14" stroke="#2C2E2F" stroke-linecap="round"></path>
+                        <path d="M25.827229,28.4135952 L27.9490689,23.8 L30.1555062,28.3701732 L35,29.0576893 L31.5332347,32.6689584 L32.4068319,37.7077281 L28.057837,35.3719824 L23.7537304,37.8 L24.5323714,32.7431378 L21,29.2024296 L25.827229,28.4135952 Z" stroke="#2C2E2F"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

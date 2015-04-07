@@ -2,12 +2,18 @@
     "tools": {
         "pp_here" : {
             "signedUp": "/retailprofile/settings",
-            "notSignedUp": "/retailprofile/settings"
+            "notSignedUp": "/webapps/mpp/credit-card-reader"
         },
 
         "pp_invoicing" : {
             "signedUp": "/cgi-bin/webscr?cmd=_manage-invoice",
             "notSignedUp": "/cgi-bin/webscr?cmd=_manage-invoice"
+        },
+
+        "pp_virtual_terminal" : {
+            "signedUp": "https://paypalmanager.paypal.com/vtOrderTransaction.do",
+            "notSignedUp": "https://registration.paypal.com/onboardingPage.do?bundleType=C3&amp;country=US&amp;partner=PayPal",
+            "pending": "/cgi-bin/webscr?cmd=_vt_hub-inside"
         },
 
         "pp_express_checkout" : {
@@ -18,6 +24,11 @@
         "pp_third_party_shopping_card" : {
             "signedUp": "/webapps/mpp/standard-integration",
             "notSignedUp": "/webapps/mpp/standard-integration"
+        },
+
+        "pp_cross_border_trade" : {
+            "signedUp": "https://www.paypal-passport.com",
+            "notSignedUp": "https://www.paypal-passport.com"
         }
     }
 }

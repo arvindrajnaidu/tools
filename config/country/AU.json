@@ -1,15 +1,31 @@
 {
     "tools": {
-        "pp_virtual_terminal" : {
-            "signedUp": "https://paypalmanager.paypal.com/vtOrderTransaction.do",
-            "notSignedUp": "https://www.paypal-apac.com/pro/single-form.asp",
-            "pending": "/cgi-bin/webscr?cmd=_vt_hub-inside"
+        "pp_request_money" : {
+            "signedUp": "/cgi-bin/webscr?cmd=_manage-invoice",
+            "notSignedUp": "/cgi-bin/webscr?cmd=_manage-invoice"
         },
 
-        "pp_website_payments_and_hosted_pro" : {
-            "signedUp": "https://www.paypal-apac.com/pro/single-form.asp",
+        "pp_virtual_terminal" : {
+            "signedUp": "https://paypalmanager.paypal.com/vtOrderTransaction.do",
+            "notSignedUp": "/webapps/mpp/sell-over-phone",
+            "pending": "/webapps/mpp/sell-over-phone"
+        },
+
+        "pp_website_payments_pro" : {
+            "signedUp": "https://paypalmanager.paypal.com/wpp.do",
             "notSignedUp": "https://www.paypal-apac.com/pro/single-form.asp",
             "pending": "https://www.paypal-apac.com/pro/single-form.asp"
+        },
+
+        "pp_hosted_sole_solution" : {
+            "signedUp": "/cgi-bin/webscr?cmd=_button-designer",
+            "notSignedUp": "/webapps/mpp/sell-online",
+            "pending": "/webapps/mpp/sell-online"
+        },
+
+        "pp_pos" : {
+            "signedUp": "https://www.paypal.com.au/POS/pos-signup.aspx",
+            "notSignedUp": "https://www.paypal.com.au/POS/pos-signup.aspx"
         }
     }
 }

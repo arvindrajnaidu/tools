@@ -84,8 +84,8 @@
 
         "pp_virtual_terminal" : {
             "signedUp": "https://paypalmanager.paypal.com/vtOrderTransaction.do",
-            "notSignedUp": "https://registration.paypal.com/onboardingPage.do?bundleType=C3&amp;country=US&amp;partner=PayPal",
-            "pending": "/cgi-bin/webscr?cmd=_vt_hub-inside"
+            "notSignedUp": "/cgi-bin/webscr?cmd=_product-go&amp;product=none",
+            "pending": "https://paypalmanager.paypal.com/vtOrderTransaction.do"
         },
 
         "pp_tax_calculator" : {
@@ -109,7 +109,13 @@
             "notSignedUp": "/webapps/workingcapital"
         },
 
-        "pp_website_payments_and_hosted_pro" : {
+        "pp_website_payments_pro" : {
+            "signedUp": "https://paypalmanager.paypal.com/wpp.do",
+            "notSignedUp": "/webapps/mpp/paypal-payments-pro",
+            "pending": "https://paypalmanager.paypal.com/wpp.do"
+        },
+
+        "pp_hosted_sole_solution" : {
             "signedUp": "https://paypalmanager.paypal.com/wpp.do",
             "notSignedUp": "/webapps/mpp/paypal-payments-pro",
             "pending": "https://paypalmanager.paypal.com/wpp.do"
@@ -153,11 +159,6 @@
         "pp_currency_calculator" : {
             "signedUp": "/cgi-bin/webscr?cmd=_profile-currencies",
             "notSignedUp": "/cgi-bin/webscr?cmd=_profile-currencies"
-        },
-
-        "pp_pos" : {
-            "signedUp": "https://www.paypal.com.au/POS/pos-signup.aspx",
-            "notSignedUp": "https://www.paypal.com.au/POS/pos-signup.aspx"
         }
     }
 }
