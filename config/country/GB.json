@@ -11,6 +11,26 @@
             "pending": "https://paypalmanager.paypal.com/vtOrderTransaction.do"
         },
 
+        "pp_invoicing" : {
+            "defaultFavorite" : true
+        },
+
+        "pp_send_money" : {
+            "defaultFavorite" : true
+        },
+
+        "pp_request_money" : {
+            "defaultFavorite" : true
+        },
+
+        "pp_business_setup" : {
+            "defaultFavorite" : true
+        },        
+
+        "pp_resolution_center" : {
+            "defaultFavorite" : true
+        },
+
         "pp_website_payments_pro" : {
             "signedUp": "https://paypalmanager.paypal.com/editSetting.do?pageName=profile",
             "notSignedUp": "https://registration.paypal.com/welcomePage.do?partner=PayPalUK&amp;bundleCode=C3&amp;country=GB",

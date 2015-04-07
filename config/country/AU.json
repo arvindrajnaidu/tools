@@ -17,6 +17,22 @@
             "pending": "https://www.paypal-apac.com/pro/single-form.asp"
         },
 
+        "pp_here" : {
+            "defaultFavorite" : true
+        },
+
+        "pp_send_money" : {
+            "defaultFavorite" : true
+        },
+        
+        "pp_request_money" : {
+            "defaultFavorite" : true
+        },
+
+        "pp_resolution_center" : {
+            "defaultFavorite" : true
+        },
+
         "pp_hosted_sole_solution" : {
             "signedUp": "/cgi-bin/webscr?cmd=_button-designer",
             "notSignedUp": "/webapps/mpp/sell-online",

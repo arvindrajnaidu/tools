@@ -2,12 +2,22 @@
     "tools": {
         "pp_here" : {
             "signedUp": "/retailprofile/settings",
-            "notSignedUp": "/webapps/mpp/credit-card-reader"
+            "notSignedUp": "/webapps/mpp/credit-card-reader",
+            "defaultFavorite" : true
+        },        
+        "pp_send_money" : {
+            "defaultFavorite" : true
         },
-
+        "pp_business_setup" : {
+            "defaultFavorite" : true
+        },        
+        "pp_resolution_center" : {
+            "defaultFavorite" : true
+        },
         "pp_invoicing" : {
             "signedUp": "/cgi-bin/webscr?cmd=_manage-invoice",
-            "notSignedUp": "/cgi-bin/webscr?cmd=_manage-invoice"
+            "notSignedUp": "/cgi-bin/webscr?cmd=_manage-invoice",
+            "defaultFavorite": true
         },
 
         "pp_virtual_terminal" : {
@@ -20,7 +30,6 @@
             "signedUp": "https://developer.paypal.com/webapps/developer/docs/classic/express-checkout/integration-guide/ECGettingStarted/",
             "notSignedUp": "https://developer.paypal.com/webapps/developer/docs/classic/express-checkout/integration-guide/ECGettingStarted/"
         },
-
         "pp_third_party_shopping_card" : {
             "signedUp": "/webapps/mpp/standard-integration",
             "notSignedUp": "/webapps/mpp/standard-integration"

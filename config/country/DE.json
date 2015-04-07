@@ -5,6 +5,26 @@
             "notSignedUp": "/webapps/mpp/billsafe"
         },
 
+        "pp_invoicing" : {
+            "defaultFavorite" : true
+        },
+
+        "pp_send_money" : {
+            "defaultFavorite" : true
+        },
+        
+        "pp_request_money" : {
+            "defaultFavorite" : true
+        },
+
+        "pp_business_setup" : {
+            "defaultFavorite" : true
+        },        
+
+        "pp_resolution_center" : {
+            "defaultFavorite" : true
+        },
+
         "pp_manual_account_transactions" : {
             "signedUp": "/webapps/mpp/leitfaden-buchhaltung",
             "notSignedUp": "/webapps/mpp/leitfaden-buchhaltung"

@@ -33,7 +33,8 @@ function _allToolsRequestHandler (callback) {
                 link: util.format("metadata:%s.%s", tool.name, toolStatus),
                 active: active,
                 popularity: tool.popularity,
-                favorite: tool.favorite
+                favorite: tool.favorite,
+                defaultFavorite : util.format("metadata:%s.defaultFavorite", tool.name)
             });
         });
 
