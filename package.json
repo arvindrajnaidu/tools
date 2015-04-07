@@ -40,6 +40,7 @@
     "grunt-gulp": "^0.1.0",
     "gulp": "^3.8.11",
     "gulp-less": "^3.0.1",
+    "gulp-svg-sprite": "^1.0.19",
     "gulp-uglify": "^1.1.0",
     "http-proxy": "^1.8.1",
     "jquery": "^2.1.3",

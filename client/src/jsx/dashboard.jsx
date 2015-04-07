@@ -40,6 +40,7 @@ var ToolsDashboard = React.createClass({
         var toolData = [{
             "id": tool.id,
             "key": tool.key,
+            "popularity": tool.popularity,
             "favorite": !($(event.target).hasClass('faved'))
         }];
 
@@ -77,7 +78,7 @@ var ToolsDashboard = React.createClass({
                 <div className="row-fluid tools-set">
                     <div id={tool.key} className={cx("col-sm-3", "tool", inactiveClass)}>
                         <div className="toolStatus"></div>
-                        <div className="toolImage"></div>
+                        <div className={cx("toolImage", "svg-ic_" + tool.key, "svg-ic_" + tool.key + "-dims")}></div>
                         <ul>
                             <li>
                                 <h4>{this.i18n(tool.name, true)}</h4>

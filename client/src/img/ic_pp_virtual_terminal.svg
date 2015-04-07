@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="46px" height="38px" viewBox="0 0 46 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-258.000000, -971.000000)">
+            <g transform="translate(151.000000, 917.000000)">
+                <g transform="translate(102.000000, 44.000000)">
+                    <g>
+                        <rect x="0" y="0" width="56" height="56"></rect>
+                        <path d="M18.5,47.5 L22.5,42.5004294 L6.50298231,42.5004289 C5.94905047,42.5004289 5.5,42.0455047 5.5,41.5012868 L5.5,12.4977818 C5.5,11.9464853 5.94978509,11.4995798 6.50160437,11.4995906 L49.4970177,11.5004289 C50.0509495,11.5004289 50.5,11.9553532 50.5,12.4995711 L50.5,41.5012868 C50.5,42.0530978 50.0546192,42.5004289 49.4970177,42.5004289 L33.5,42.5004292 L37.5,47.5" stroke="#2C2E2F" stroke-linecap="round"></path>
+                        <rect stroke="#2C2E2F" x="19.5" y="17.5" width="17.5" height="11.9997953"></rect>
+                        <path d="M20,20.5 L36.5,20.5" stroke="#2C2E2F" stroke-linecap="square"></path>
+                        <path d="M20,23.5 L36.5,23.5" stroke="#2C2E2F" stroke-linecap="square"></path>
+                        <path d="M6.5,35.5 L50.5,35.5" stroke="#2C2E2F" stroke-linecap="square"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
