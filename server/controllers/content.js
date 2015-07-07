@@ -1,11 +1,11 @@
 "use strict";
 
 var contentLookup = require('../lib/content'),
-    log = require('../lib/logger').logger,
     traverse = require('traverse'),
     nconf = require('nconf');
 
 nconf.argv().env();
+
 var isPisces = (nconf.get('PISCES') === "true");
 
 function getValue (obj, bundle, delimiter) {
@@ -25,23 +25,12 @@ function getValue (obj, bundle, delimiter) {
 
 module.exports.getContentForTools = function (req, res, next) {
 
-    log.info("getContentForTools", req.params);
-
-    contentLookup.getDictionaryForLocality(req.locality.culture, function (err, dictionary) {
+    contentLookup.getDictionaryForLocality(req.languageCode, function (err, dictionary) {
         if (err) {
-            log.error("Error occured while getting dictionary from props", {
-                err: err,
-                dictionary: dictionary
-            });
-            return res.status(500).send();
+            return res.status(500).send(err);
         }
-        log.debug("Req Model", req.params);
-        // log.debug("getContentForTools for %s", locale, dictionary);
-
         var bundle = req.query.bundle || 'tools';
-
         var outJSON = getValue(dictionary[bundle], bundle);
-        
         res.status(200).send(outJSON || {});
     });
 };

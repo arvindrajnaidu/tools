@@ -44,9 +44,10 @@ var ToolsDropdown = React.createClass({
     }.bind(this));
 
 		return (
-      <li className="mer-more-menu">
+      <li className="hidden-sm mer-more-menu">
         <a name="label" href="#" className="moreLink">
           {this.i18n("label")}
+          <span className="moreIcon icon icon-arrow-down-half-small"/>
         </a>
         <ul>
           {toolNodes}
